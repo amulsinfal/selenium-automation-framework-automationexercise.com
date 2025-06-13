@@ -20,21 +20,20 @@ public class PageDriver {
 	private static final Logger log = LogManager.getLogger(PageDriver.class);
 
 	public static WebDriver intializeDriver(String browserName) {
-
 		if (browserName.equalsIgnoreCase("Chrome")) {
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--incognito");
 			driver = new ChromeDriver(options);
 			log.info("Chrome browser launched.");
 		} else if (browserName.equalsIgnoreCase("Firefox")) {
-            FirefoxOptions firefoxOptions = new FirefoxOptions();
-            firefoxOptions.addArguments("--private");
-            driver = new FirefoxDriver(firefoxOptions);
+			FirefoxOptions firefoxOptions = new FirefoxOptions();
+			firefoxOptions.addArguments("--private");
+			driver = new FirefoxDriver(firefoxOptions);
 			log.info("Firefox browser launched.");
 		} else if (browserName.equalsIgnoreCase("Edge")) {
-            EdgeOptions edgeOptions = new EdgeOptions();
-            edgeOptions.addArguments("-inprivate"); 
-            driver = new EdgeDriver(edgeOptions);
+			EdgeOptions edgeOptions = new EdgeOptions();
+			edgeOptions.addArguments("-inprivate"); 
+			driver = new EdgeDriver(edgeOptions);
 			log.info("Edge browser launched.");
 		} else {
 			log.error("Invalid browser name provided: " + browserName+ ". Launching the test in chrome browser.");

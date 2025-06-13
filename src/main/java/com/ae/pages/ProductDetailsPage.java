@@ -9,17 +9,17 @@ import org.openqa.selenium.WebElement;
 import com.ae.base.BasePage;
 
 public class ProductDetailsPage extends BasePage {
-	
+
 	private static final Logger log = LogManager.getLogger(ProductDetailsPage.class);
 	private final By productQty = By.id("quantity");
 	private final By btnAddToCart = By.xpath("//button[@class='btn btn-default cart']");
 	private final By btnContinueShopping = By.xpath("//button[@class='btn btn-success close-modal btn-block']");
 	private final By lnkViewCart = By.xpath("//a[@href='/view_cart']/u");
-		
+
 	public ProductDetailsPage(WebDriver driver) {
 		super(driver);
 	}
-	
+
 	public ProductDetailsPage selectQuantity(String quantity) {
 		try {
 			WebElement element = waitForElementToBeClickable(productQty);
@@ -29,11 +29,12 @@ public class ProductDetailsPage extends BasePage {
 			log.info("'" + quantity + "' entered in the quantity text box.");
 			return this;
 		} catch (Exception e) {
-			log.info("Unable to enter '" + quantity + "' text in the quantity text box. Error occured : " + e.getMessage());
+			log.info("Unable to enter '" + quantity + "' text in the quantity text box. Error occured : "
+					+ e.getMessage());
 			return this;
 		}
 	}
-	
+
 	public ProductDetailsPage clickAddToCart() {
 		try {
 			WebElement element = waitForElementToBeClickable(btnAddToCart);
@@ -45,7 +46,7 @@ public class ProductDetailsPage extends BasePage {
 			return null;
 		}
 	}
-	
+
 	public ProductDetailsPage clickContinueShopping() {
 		try {
 			WebElement element = waitForElementToBeClickable(btnContinueShopping);
@@ -57,7 +58,7 @@ public class ProductDetailsPage extends BasePage {
 			return null;
 		}
 	}
-	
+
 	public CartPage clickViewCartLink() {
 		try {
 			WebElement element = waitForElementToBeClickable(lnkViewCart);

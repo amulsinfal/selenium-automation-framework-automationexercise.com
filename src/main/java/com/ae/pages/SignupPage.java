@@ -9,7 +9,6 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.ae.base.BasePage;
-import com.ae.objects.CustomerAccountInformation;
 import com.ae.objects.Customers;
 
 public class SignupPage extends BasePage {

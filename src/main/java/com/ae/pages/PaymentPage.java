@@ -9,7 +9,7 @@ import org.openqa.selenium.WebElement;
 import com.ae.base.BasePage;
 import com.ae.objects.Payments;
 
-public class PaymentPage extends BasePage{
+public class PaymentPage extends BasePage {
 
 	private static final Logger log = LogManager.getLogger(HomePage.class);
 	private final By lblPageHeader = By.xpath("//div[@class='step-one']/h2[@class='heading']");
@@ -24,19 +24,18 @@ public class PaymentPage extends BasePage{
 	public PaymentPage(WebDriver driver) {
 		super(driver);
 	}
-	
-	
-    public boolean isPaymentPageVisible() {
-        try {
-            WebElement element = waitForElementToBeVisible(lblPageHeader);
-            log.info("Payment page displayed is " + element.isDisplayed());
-            return element.isDisplayed();
-        } catch (Exception e) {
-        	log.info("Payment page not displayed. Error occured : " + e.getMessage());
-            return false;
-        }
-    }
-    
+
+	public boolean isPaymentPageVisible() {
+		try {
+			WebElement element = waitForElementToBeVisible(lblPageHeader);
+			log.info("Payment page displayed is " + element.isDisplayed());
+			return element.isDisplayed();
+		} catch (Exception e) {
+			log.info("Payment page not displayed. Error occured : " + e.getMessage());
+			return false;
+		}
+	}
+
 	public PaymentPage enterNameOnCard(String name) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtNameOnCard);
@@ -49,7 +48,7 @@ public class PaymentPage extends BasePage{
 			return this;
 		}
 	}
-    
+
 	public PaymentPage enterCardNumber(String cardNumber) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtCardNumber);
@@ -62,7 +61,7 @@ public class PaymentPage extends BasePage{
 			return this;
 		}
 	}
-    
+
 	public PaymentPage enterCvc(String cvc) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtCardCvc);
@@ -70,12 +69,11 @@ public class PaymentPage extends BasePage{
 			log.info("'" + cvc + "' entered in the cvc text box.");
 			return this;
 		} catch (Exception e) {
-			log.info("Unable to enter '" + cvc + "' text in the cvc text box. Error occured : "
-					+ e.getMessage());
+			log.info("Unable to enter '" + cvc + "' text in the cvc text box. Error occured : " + e.getMessage());
 			return this;
 		}
 	}
-    
+
 	public PaymentPage enterExpiryMonth(String expiryMonth) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtCardExpiryMonth);
@@ -88,7 +86,7 @@ public class PaymentPage extends BasePage{
 			return this;
 		}
 	}
-	
+
 	public PaymentPage enterExpiryYear(String expiryYear) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtCardExpiryYear);
@@ -101,7 +99,7 @@ public class PaymentPage extends BasePage{
 			return this;
 		}
 	}
-	
+
 	public PaymentDonePage clickPayAndConfirmOrder() {
 		try {
 			WebElement element = waitForElementToBeClickable(btnPayAndConfirm);
@@ -114,19 +112,21 @@ public class PaymentPage extends BasePage{
 			return null;
 		}
 	}
-	
+
 	public PaymentPage fillCardDetails(Payments payment) {
-		return enterNameOnCard(payment.getNameOnCard()).enterCardNumber(payment.getCardNumber()).
-				enterCvc(payment.getCvc()).enterExpiryMonth(payment.getExpiryMonth()).enterExpiryYear(payment.getExpiryYear());
+		return enterNameOnCard(payment.getNameOnCard()).enterCardNumber(payment.getCardNumber())
+				.enterCvc(payment.getCvc()).enterExpiryMonth(payment.getExpiryMonth())
+				.enterExpiryYear(payment.getExpiryYear());
 	}
-	
+
 	public boolean isOrderSuccessMessageVisible() {
 		try {
 			WebElement element = waitForElementToBeVisible(lblSuccessMessage);
 			log.info("Order Placed success message header is displayed on the Payment done page");
 			return element.isDisplayed();
 		} catch (Exception e) {
-			log.info("Order Placed success message header not displayed on the Payment done page. Error occured : " + e.getMessage());
+			log.info("Order Placed success message header not displayed on the Payment done page. Error occured : "
+					+ e.getMessage());
 			return false;
 		}
 	}
@@ -142,5 +142,5 @@ public class PaymentPage extends BasePage{
 			return "Unable to retrive Order Placed success message text on the Payment done page.";
 		}
 	}
-	
+
 }

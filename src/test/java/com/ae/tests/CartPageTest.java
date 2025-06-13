@@ -119,6 +119,7 @@ public class CartPageTest extends BaseTest {
 		5. Click 'X' button corresponding to particular product
 		6. Verify that product is removed from the cart
 	 */
+	
 	@Test (priority = 5, description = "Test Case 17: Remove Products From Cart.")
 	public void testRemoveProductFromCart() {
 		homePage = new HomePage(driver);
