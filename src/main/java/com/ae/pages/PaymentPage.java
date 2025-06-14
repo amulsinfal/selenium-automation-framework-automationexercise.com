@@ -12,7 +12,6 @@ import com.ae.objects.Payments;
 public class PaymentPage extends BasePage {
 
 	private static final Logger log = LogManager.getLogger(HomePage.class);
-	private final By lblPageHeader = By.xpath("//div[@class='step-one']/h2[@class='heading']");
 	private final By txtNameOnCard = By.name("name_on_card");
 	private final By txtCardNumber = By.name("card_number");
 	private final By txtCardCvc = By.name("cvc");
@@ -25,18 +24,7 @@ public class PaymentPage extends BasePage {
 		super(driver);
 	}
 
-	public boolean isPaymentPageVisible() {
-		try {
-			WebElement element = waitForElementToBeVisible(lblPageHeader);
-			log.info("Payment page displayed is " + element.isDisplayed());
-			return element.isDisplayed();
-		} catch (Exception e) {
-			log.info("Payment page not displayed. Error occured : " + e.getMessage());
-			return false;
-		}
-	}
-
-	public PaymentPage enterNameOnCard(String name) {
+	private PaymentPage enterNameOnCard(String name) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtNameOnCard);
 			element.sendKeys(name);
@@ -49,7 +37,7 @@ public class PaymentPage extends BasePage {
 		}
 	}
 
-	public PaymentPage enterCardNumber(String cardNumber) {
+	private PaymentPage enterCardNumber(String cardNumber) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtCardNumber);
 			element.sendKeys(cardNumber);
@@ -62,7 +50,7 @@ public class PaymentPage extends BasePage {
 		}
 	}
 
-	public PaymentPage enterCvc(String cvc) {
+	private PaymentPage enterCvc(String cvc) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtCardCvc);
 			element.sendKeys(cvc);
@@ -74,7 +62,7 @@ public class PaymentPage extends BasePage {
 		}
 	}
 
-	public PaymentPage enterExpiryMonth(String expiryMonth) {
+	private PaymentPage enterExpiryMonth(String expiryMonth) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtCardExpiryMonth);
 			element.sendKeys(expiryMonth);
@@ -87,7 +75,7 @@ public class PaymentPage extends BasePage {
 		}
 	}
 
-	public PaymentPage enterExpiryYear(String expiryYear) {
+	private PaymentPage enterExpiryYear(String expiryYear) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtCardExpiryYear);
 			element.sendKeys(expiryYear);

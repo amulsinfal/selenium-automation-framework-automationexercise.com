@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 import com.ae.base.BaseTest;
 import com.ae.objects.Customers;
 import com.ae.objects.Payments;
+import com.ae.pages.AccountCreatedPage;
 import com.ae.pages.CartPage;
 import com.ae.pages.CheckoutPage;
 import com.ae.pages.HomePage;
@@ -20,23 +21,8 @@ public class CheckoutTest extends BaseTest {
 	SignupLoginPage signupLoginPage;
 	PaymentPage paymentPage;
 	PaymentDonePage paymentDonePage;
+	AccountCreatedPage accountCreatedPage;
 	
-	// 1. Launch browser
-	// 2. Navigate to url 'http://automationexercise.com'
-	// 4. Add products to cart
-	// 5. Click 'Cart' button
-	// 7. Click Proceed To Checkout
-	// 8. Click 'Register / Login' button
-	// 9. Fill all details in Signup and create account
-	// 12. Click 'Cart' button
-	// 13. Click 'Proceed To Checkout' button
-	// 15. Enter description in comment text area and click 'Place Order'
-	// 16. Enter payment details: Name on Card, Card Number, CVC, Expiration date
-	// 17. Click 'Pay and Confirm Order' button
-	// 18. Verify success message 'Your order has been placed successfully!'
-	// 19. Click 'Delete Account' button
-	// 20. Verify 'ACCOUNT DELETED!' and click 'Continue' button
-
 	@Test(priority = 0, description = "Test Case 14: Place Order: Register while Checkout.")
 	public void testToRegisterWhileCheckout() {
 		
@@ -66,13 +52,20 @@ public class CheckoutTest extends BaseTest {
 		payment.setExpiryMonth("05");
 		payment.setExpiryYear("2026");
 		
-		homePage = new HomePage(driver);
 		String[] productsToAddToCart = {"Blue Top", "Men Tshirt"};
+		
+		homePage = new HomePage(driver);
+		Assert.assertTrue(homePage.isHomePageVisible(),"Home page not visible.");
 		cartPage = homePage.addToCart(productsToAddToCart).clickCartLink().clickProceedToCheckout();
 		cartPage.clickRegisterLoginLink();
 		signupLoginPage = new SignupLoginPage(driver);
-		signupLoginPage.enterSignupName("johndoe10").enterSignupEmail("johndoe10@email.com").clickSignup().fillCustomerInformation(customer).clickCreateAccount().clickContinue()
-		.clickCartLink().clickProceedToCheckout();
+		accountCreatedPage = signupLoginPage.enterSignupName("johndoe05").enterSignupEmail("johndoe05@email.com").clickSignup().fillCustomerInformation(customer).clickCreateAccount();
+		Assert.assertTrue(accountCreatedPage.isAccountCreatedLabelVisible() && accountCreatedPage.getAccountCreatedLabelText() .equals("ACCOUNT CREATED!"), "'ACCOUNT CREATED!' label is missing or not visible.");
+		homePage = accountCreatedPage.clickContinue();
+		Assert.assertTrue(homePage.isLoggedInAsUsernameVisible() && homePage.getLoggedInAsUsernameText().equals("Logged in as johndoe05"), "'Logged in as username' label is missing or not visible.");
+		cartPage = homePage.clickCartLink();
+		Assert.assertTrue(cartPage.isCartPageVisible(),"Cart page not visible.");		
+		cartPage.clickProceedToCheckout();
 		checkoutPage = new CheckoutPage(driver);
 		Assert.assertTrue(checkoutPage.getCustomerName().equals("Mr. John Doe"),"Customer name is incorrect.");
 		Assert.assertTrue(checkoutPage.getCustomerCompany().equals("The Lawrence Company"),"Customer company name is incorrect.");
@@ -81,33 +74,19 @@ public class CheckoutTest extends BaseTest {
 		Assert.assertTrue(checkoutPage.getCustomerCityStateZip().equals("Shreveport AR 50576"),"Customer city, state and zipcode is incorrect.");
 		Assert.assertTrue(checkoutPage.getCustomerCountry().equals("United States"),"Customer country is incorrect.");
 		Assert.assertTrue(checkoutPage.getCustomerMobile().equals("9999999999"),"Customer mobile is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductPrice("Blue Top").equals("500"),"Product Price is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductQuantity("Blue Top").equals("1"),"Product Quantity is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductTotalAmount("Blue Top").equals("500"),"Product Total Amount is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductPrice("Men Tshirt").equals("400"),"Product Price is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductQuantity("Men Tshirt").equals("1"),"Product Quantity is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductTotalAmount("Men Tshirt").equals("400"),"Product Total Amount is incorrect.");		
 		paymentDonePage =  checkoutPage.enterComment("This is the sample comment on the checkoutpage.").clickPlaceOrder().fillCardDetails(payment).clickPayAndConfirmOrder();
 		Assert.assertTrue(paymentDonePage.isConfirmedMessageVisible() && paymentDonePage.getConfirmedMessageText().equals("Congratulations! Your order has been confirmed!"), "");
 		homePage.clickDeleteAccountLink().clickContinue();
 		Assert.assertTrue(homePage.isHomePageVisible(), "Home page not visible.");
 	}
 	
-//	Test Case 15: Place Order: Register before Checkout
-//	1. Launch browser
-//	2. Navigate to url 'http://automationexercise.com'
-//	3. Verify that home page is visible successfully
-//	4. Click 'Signup / Login' button
-//	5. Fill all details in Signup and create account
-//	6. Verify 'ACCOUNT CREATED!' and click 'Continue' button
-//	7. Verify ' Logged in as username' at top
-//	8. Add products to cart
-//	9. Click 'Cart' button
-//	10. Verify that cart page is displayed
-//	11. Click Proceed To Checkout
-//	12. Verify Address Details and Review Your Order
-//	13. Enter description in comment text area and click 'Place Order'
-//	14. Enter payment details: Name on Card, Card Number, CVC, Expiration date
-//	15. Click 'Pay and Confirm Order' button
-//	16. Verify success message 'Your order has been placed successfully!'
-//	17. Click 'Delete Account' button
-//	18. Verify 'ACCOUNT DELETED!' and click 'Continue' button
-	
-	@Test(priority = 0, description = "Test Case 14: Place Order: Register before Checkout.")
+	@Test(priority = 1, description = "Test Case 15: Place Order: Register before Checkout")
 	public void testToRegisterBeforeCheckout() {
 		
 		Customers customer = new Customers();
@@ -136,10 +115,18 @@ public class CheckoutTest extends BaseTest {
 		payment.setExpiryMonth("05");
 		payment.setExpiryYear("2026");
 		
-		homePage = new HomePage(driver);
 		String[] productsToAddToCart = {"Blue Top", "Men Tshirt"};
-		homePage.clickSignupLoginLink().enterSignupName("johndoe10").enterSignupEmail("johndoe10@email.com").clickSignup().fillCustomerInformation(customer).clickCreateAccount().clickContinue()
-		.clickProductsLink().addToCart(productsToAddToCart).clickCartLink().clickProceedToCheckout();
+		
+		homePage = new HomePage(driver);
+		Assert.assertTrue(homePage.isHomePageVisible(),"Home page not visible.");
+		signupLoginPage = homePage.clickSignupLoginLink();
+		accountCreatedPage = signupLoginPage.enterSignupName("johndoe05").enterSignupEmail("johndoe05@email.com").clickSignup().fillCustomerInformation(customer).clickCreateAccount();
+		Assert.assertTrue(accountCreatedPage.isAccountCreatedLabelVisible() && accountCreatedPage.getAccountCreatedLabelText() .equals("ACCOUNT CREATED!"), "'ACCOUNT CREATED!' label is missing or not visible.");
+		homePage = accountCreatedPage.clickContinue();
+		Assert.assertTrue(homePage.isLoggedInAsUsernameVisible() && homePage.getLoggedInAsUsernameText().equals("Logged in as johndoe05"), "'Logged in as username' label is missing or not visible.");
+		cartPage = homePage.addToCart(productsToAddToCart).clickCartLink();
+		Assert.assertTrue(cartPage.isCartPageVisible(), "Cart Page is not visible.");
+		cartPage = cartPage.clickProceedToCheckout();
 		checkoutPage = new CheckoutPage(driver);
 		Assert.assertTrue(checkoutPage.getCustomerName().equals("Mr. John Doe"),"Customer name is incorrect.");
 		Assert.assertTrue(checkoutPage.getCustomerCompany().equals("The Lawrence Company"),"Customer company name is incorrect.");
@@ -148,34 +135,22 @@ public class CheckoutTest extends BaseTest {
 		Assert.assertTrue(checkoutPage.getCustomerCityStateZip().equals("Shreveport AR 50576"),"Customer city, state and zipcode is incorrect.");
 		Assert.assertTrue(checkoutPage.getCustomerCountry().equals("United States"),"Customer country is incorrect.");
 		Assert.assertTrue(checkoutPage.getCustomerMobile().equals("9999999999"),"Customer mobile is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductPrice("Blue Top").equals("500"),"Product Price is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductQuantity("Blue Top").equals("1"),"Product Quantity is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductTotalAmount("Blue Top").equals("500"),"Product Total Amount is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductPrice("Men Tshirt").equals("400"),"Product Price is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductQuantity("Men Tshirt").equals("1"),"Product Quantity is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductTotalAmount("Men Tshirt").equals("400"),"Product Total Amount is incorrect.");		
 		paymentDonePage =  checkoutPage.enterComment("This is the sample comment on the checkoutpage.").clickPlaceOrder().fillCardDetails(payment).clickPayAndConfirmOrder();
 		Assert.assertTrue(paymentDonePage.isConfirmedMessageVisible() && paymentDonePage.getConfirmedMessageText().equals("Congratulations! Your order has been confirmed!"), "");
 		homePage.clickDeleteAccountLink().clickContinue();
 		Assert.assertTrue(homePage.isHomePageVisible(), "Home page not visible.");
 	}
 	
-	
-	//	Test Case 16: Place Order: Login before Checkout
-	//	1. Launch browser
-	//	2. Navigate to url 'http://automationexercise.com'
-	//	3. Verify that home page is visible successfully
-	//	4. Click 'Signup / Login' button
-	//	5. Fill email, password and click 'Login' button
-	//	6. Verify 'Logged in as username' at top
-	//	7. Add products to cart
-	//	8. Click 'Cart' button
-	//	9. Verify that cart page is displayed
-	//	10. Click Proceed To Checkout
-	//	11. Verify Address Details and Review Your Order
-	//	12. Enter description in comment text area and click 'Place Order'
-	//	13. Enter payment details: Name on Card, Card Number, CVC, Expiration date
-	//	14. Click 'Pay and Confirm Order' button
-	//	15. Verify success message 'Your order has been placed successfully!'
-	//	16. Click 'Delete Account' button
-	//	17. Verify 'ACCOUNT DELETED!' and click 'Continue' button
-	
-	@Test(priority = 0, description = "Test Case 14: Place Order: Login before Checkout.")
+	@Test(priority = 2, description = "Test Case 16: Place Order: Login before Checkout")
 	public void testToLoginBeforeCheckout() {
+		
+		RegisterUser();
 		
 		Customers customer = new Customers();
 		customer.setTitle("Mr");
@@ -203,9 +178,15 @@ public class CheckoutTest extends BaseTest {
 		payment.setExpiryMonth("05");
 		payment.setExpiryYear("2026");
 		
-		homePage = new HomePage(driver);
 		String[] productsToAddToCart = {"Blue Top", "Men Tshirt"};
-		cartPage = homePage.clickSignupLoginLink().enterLoginEmail("johndoe10@email.com").enterLoginPassword("johndoe").clickLogin().clickProductsLink().addToCart(productsToAddToCart).clickCartLink().clickProceedToCheckout();
+		
+		homePage = new HomePage(driver);
+		Assert.assertTrue(homePage.isHomePageVisible(),"Home page not visible.");
+		homePage = homePage.clickSignupLoginLink().enterLoginEmail("johndoe04@email.com").enterLoginPassword("johndoe").clickLogin();
+		Assert.assertTrue(homePage.isLoggedInAsUsernameVisible() && homePage.getLoggedInAsUsernameText().equals("Logged in as johndoe04"), "'Logged in as username' label is missing or not visible.");
+		cartPage = homePage.clickProductsLink().addToCart(productsToAddToCart).clickCartLink();
+		Assert.assertTrue(cartPage.isCartPageVisible(), "Cart Page is not visible.");
+		cartPage = cartPage.clickProceedToCheckout();
 		checkoutPage = new CheckoutPage(driver);
 		Assert.assertTrue(checkoutPage.getCustomerName().equals("Mr. John Doe"),"Customer name is incorrect.");
 		Assert.assertTrue(checkoutPage.getCustomerCompany().equals("The Lawrence Company"),"Customer company name is incorrect.");
@@ -214,10 +195,17 @@ public class CheckoutTest extends BaseTest {
 		Assert.assertTrue(checkoutPage.getCustomerCityStateZip().equals("Shreveport AR 50576"),"Customer city, state and zipcode is incorrect.");
 		Assert.assertTrue(checkoutPage.getCustomerCountry().equals("United States"),"Customer country is incorrect.");
 		Assert.assertTrue(checkoutPage.getCustomerMobile().equals("9999999999"),"Customer mobile is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductPrice("Blue Top").equals("500"),"Product Price is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductQuantity("Blue Top").equals("1"),"Product Quantity is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductTotalAmount("Blue Top").equals("500"),"Product Total Amount is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductPrice("Men Tshirt").equals("400"),"Product Price is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductQuantity("Men Tshirt").equals("1"),"Product Quantity is incorrect.");
+		Assert.assertTrue(checkoutPage.getProductTotalAmount("Men Tshirt").equals("400"),"Product Total Amount is incorrect.");		
 		paymentDonePage =  checkoutPage.enterComment("This is the sample comment on the checkoutpage.").clickPlaceOrder().fillCardDetails(payment).clickPayAndConfirmOrder();
 		Assert.assertTrue(paymentDonePage.isConfirmedMessageVisible() && paymentDonePage.getConfirmedMessageText().equals("Congratulations! Your order has been confirmed!"), "");
 		homePage.clickDeleteAccountLink().clickContinue();
 		Assert.assertTrue(homePage.isHomePageVisible(), "Home page not visible.");
+		
 	}
 	
 }

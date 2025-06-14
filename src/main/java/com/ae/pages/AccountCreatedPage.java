@@ -18,7 +18,7 @@ public class AccountCreatedPage extends BasePage {
 		super(driver);
 	}
 
-	public boolean isAccountCreatedHeaderVisible() {
+	public boolean isAccountCreatedLabelVisible() {
 		try {
 			WebElement element = waitForElementToBeVisible(lblAccountCreatedHeader);
 			log.info("Account created page header is displayed on the Account created page");
@@ -29,7 +29,7 @@ public class AccountCreatedPage extends BasePage {
 		}
 	}
 
-	public String getAccountCreatedHeaderText() {
+	public String getAccountCreatedLabelText() {
 		try {
 			WebElement element = waitForElementToBeVisible(lblAccountCreatedHeader);
 			log.info("Account created header text retrived is '" + element.getText() + "'.");
@@ -52,4 +52,5 @@ public class AccountCreatedPage extends BasePage {
 			return null;
 		}
 	}
+	
 }

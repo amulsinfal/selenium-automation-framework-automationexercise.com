@@ -27,9 +27,11 @@ public class HomePage extends BasePage {
 	private final By lblSubscription = By.xpath("//div[@class='single-widget']/h2");
 	private final By txtSubscriptionEmail = By.id("susbscribe_email");
 	private final By btnSubscribe = By.id("subscribe");
-	private final By lblSubscribeSuccessMessage = By.xpath("//div[@id='success-subscribe']/div[@class='alert-success alert']");
+	private final By lblSubscribeSuccessMessage = By
+			.xpath("//div[@id='success-subscribe']/div[@class='alert-success alert']");
 	private final By lnkCart = By.xpath("//a[@href='/view_cart']");
 	private final By btnContinueShopping = By.xpath("//button[@class='btn btn-success close-modal btn-block']");
+	private final By lnkTestCases = By.xpath("//a[@href='/test_cases']");
 
 	public HomePage(WebDriver driver) {
 		super(driver);
@@ -38,7 +40,7 @@ public class HomePage extends BasePage {
 	public boolean isHomePageVisible() {
 		try {
 			WebElement element = waitForElementToBeVisible(homePageSlider);
-			log.info("Home page displayed.");
+			log.info("Home page is visible.");
 			return element.isDisplayed();
 		} catch (Exception e) {
 			log.info("HomePage not displayed. Error occured : " + e.getMessage());
@@ -51,7 +53,6 @@ public class HomePage extends BasePage {
 			WebElement element = waitForElementToBeVisible(lnkSignupLogin);
 			element.click();
 			log.info("Clicked on Signup / Login Link.");
-			log.info("Navigating to Signup / Login page.");
 			return new SignupLoginPage(driver);
 		} catch (Exception e) {
 			log.info("Unable to click on Signup / Login Link." + e.getMessage());
@@ -68,6 +69,18 @@ public class HomePage extends BasePage {
 			return new AccountDeletedPage(driver);
 		} catch (Exception e) {
 			log.info("Unable to click on Delete Account Link. Error occured : " + e.getMessage());
+			return null;
+		}
+	}
+
+	public TestCasesPage clickTestCasesLink() {
+		try {
+			WebElement element = waitForElementToBeClickable(lnkTestCases);
+			element.click();
+			log.info("Clicked on Test cases Link.");
+			return new TestCasesPage(driver);
+		} catch (Exception e) {
+			log.info("Unable to click on Test cases Link. Error occured : " + e.getMessage());
 			return null;
 		}
 	}
@@ -125,7 +138,6 @@ public class HomePage extends BasePage {
 			WebElement element = waitForElementToBeVisible(lnkProducts);
 			element.click();
 			log.info("Clicked on Products Link.");
-			log.info("Navigating to Products page.");
 			return new ProductsPage(driver);
 		} catch (Exception e) {
 			log.info("Unable to click on Products Link. Error occured : " + e.getMessage());
@@ -155,7 +167,7 @@ public class HomePage extends BasePage {
 		}
 	}
 
-	public HomePage clickSubscribe() {
+	public HomePage clickArrowButton() {
 		try {
 			WebElement element = waitForElementToBeClickable(btnSubscribe);
 			element.click();
@@ -203,10 +215,6 @@ public class HomePage extends BasePage {
 	}
 
 	public HomePage scrollToFooter() {
-//		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();", driver.findElement(lblSubscription));
-//		Actions action = new Actions(driver);
-//		action.moveToElement(driver.findElement(lblSubscription)).perform();
-//		return this;
 		try {
 			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView();",
 					waitForElementToBeVisible(lblSubscription));
@@ -287,5 +295,4 @@ public class HomePage extends BasePage {
 		}
 		return this;
 	}
-
 }

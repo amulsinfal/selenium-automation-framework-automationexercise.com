@@ -23,30 +23,33 @@ public class SignupLoginPage extends BasePage {
 	private final By btnSignup = By.xpath("//button[@data-qa='signup-button']");
 	private final By lblSignupError = By.xpath("//div[@class='signup-form']/form/p");
 
+	private final By lnkHome = By.xpath("//a[@href='/' and contains(text(),'Home')]");
+
 	public SignupLoginPage(WebDriver driver) {
 		super(driver);
 	}
 
-	public boolean isLoginFormHeaderVisible() {
+	public boolean isLoginToYourAccountLabelVisible() {
 		try {
 			WebElement element = waitForElementToBeVisible(lblLoginFormHeader);
-			log.info("Login form header is displayed on the Signup / login page");
+			log.info("Login To Your Account Label is displayed on the Signup / login page");
 			return element.isDisplayed();
 		} catch (Exception e) {
-			log.info("Login form header not displayed on the Signup / login page. Error occured : " + e.getMessage());
+			log.info("Login To Your Account Label not displayed on the Signup / login page. Error occured : "
+					+ e.getMessage());
 			return false;
 		}
 	}
 
-	public String getLoginFormHeaderText() {
+	public String getLoginToYourAccountLabelText() {
 		try {
 			WebElement element = waitForElementToBeVisible(lblLoginFormHeader);
-			log.info("Login form header text retrived is '" + element.getText() + "'.");
+			log.info("Login To Your Account Label text retrived is '" + element.getText() + "'.");
 			return element.getText();
 		} catch (Exception e) {
-			log.info("Unable to retrive Login form header text on the Signup / login page. Error occured : "
+			log.info("Unable to retrive Login To Your Account Label text on the Signup / login page. Error occured : "
 					+ e.getMessage());
-			return "Unable to retrive Login form header text on the Signup / login page.";
+			return "Unable to retrive Login To Your Account Label text on the Signup / login page.";
 		}
 	}
 
@@ -81,7 +84,6 @@ public class SignupLoginPage extends BasePage {
 			WebElement element = waitForElementToBeClickable(btnLogin);
 			element.click();
 			log.info("Clicked on the Login button.");
-			log.info("Navigating to Home page.");
 			return new HomePage(driver);
 		} catch (Exception e) {
 			log.info("Unable to click on Login button. Error occured : " + e.getMessage());
@@ -123,26 +125,27 @@ public class SignupLoginPage extends BasePage {
 		}
 	}
 
-	public boolean isSignupFormHeaderVisible() {
+	public boolean isNewUserSignupLabelVisible() {
 		try {
 			WebElement element = waitForElementToBeVisible(lblSignupFormHeader);
-			log.info("Signup form header is displayed on the Signup / login page");
+			log.info("New user signup label is displayed on the Signup / login page");
 			return element.isDisplayed();
 		} catch (Exception e) {
-			log.info("Signup form header not displayed on the Signup / login page. Error occured : " + e.getMessage());
+			log.info("New user signup label not displayed on the Signup / login page. Error occured : "
+					+ e.getMessage());
 			return false;
 		}
 	}
 
-	public String getSignupFormHeaderText() {
+	public String getNewUserSignupLabelText() {
 		try {
 			WebElement element = waitForElementToBeVisible(lblSignupFormHeader);
-			log.info("Signup form header text retrived is '" + element.getText() + "'.");
+			log.info("New user signup text retrived is '" + element.getText() + "'.");
 			return element.getText();
 		} catch (Exception e) {
-			log.info("Unable to retrive Signup form header text on the Signup / login page. Error occured : "
+			log.info("Unable to retrive New user signup text on the Signup / login page. Error occured : "
 					+ e.getMessage());
-			return "Unable to retrive Signup form header text on the Signup / login page.";
+			return "Unable to retrive New user signup text on the Signup / login page.";
 		}
 	}
 
@@ -177,7 +180,6 @@ public class SignupLoginPage extends BasePage {
 			WebElement element = waitForElementToBeClickable(btnSignup);
 			element.click();
 			log.info("Clicked on the Signup button.");
-			log.info("Navigating to Signup page.");
 			return new SignupPage(driver);
 		} catch (Exception e) {
 			log.info("Unable to click on Signup button. Error occured : " + e.getMessage());
@@ -205,6 +207,18 @@ public class SignupLoginPage extends BasePage {
 			log.info("Unable to retrive Signup error text on the Signup / login page. Error occured : "
 					+ e.getMessage());
 			return "Unable to retrive Signup error text on the Signup / login page.";
+		}
+	}
+
+	public HomePage clickHomeLink() {
+		try {
+			WebElement element = waitForElementToBeVisible(lnkHome);
+			element.click();
+			log.info("Clicked on Home Link.");
+			return new HomePage(driver);
+		} catch (Exception e) {
+			log.info("Unable to click on Home Link." + e.getMessage());
+			return null;
 		}
 	}
 }

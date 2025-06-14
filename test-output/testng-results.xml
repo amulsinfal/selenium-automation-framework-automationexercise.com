@@ -1,25 +1,223 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="16" passed="16" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-06-13T17:36:11 IST" name="Default suite" finished-at="2025-06-13T17:36:51 IST" duration-ms="40003">
+  <suite started-at="2025-06-14T11:34:26 IST" name="AE automation Suite" finished-at="2025-06-14T11:41:20 IST" duration-ms="414418">
     <groups>
     </groups>
-    <test started-at="2025-06-13T17:36:11 IST" name="Default test" finished-at="2025-06-13T17:36:51 IST" duration-ms="40003">
-      <class name="com.ae.tests.RegisterTest">
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.RegisterTest@3f6db3fb]" started-at="2025-06-13T17:36:11 IST" name="setup" finished-at="2025-06-13T17:36:29 IST" duration-ms="18078" status="PASS">
+    <test started-at="2025-06-14T11:34:26 IST" name="Test" finished-at="2025-06-14T11:41:20 IST" duration-ms="414418">
+      <class name="com.ae.tests.SubscriptionTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.SubscriptionTest@4351c8c3]" started-at="2025-06-14T11:40:34 IST" name="setup" finished-at="2025-06-14T11:40:41 IST" duration-ms="7663" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="verifyRegisterWithNewEmail()[pri:0, instance:com.ae.tests.RegisterTest@3f6db3fb]" started-at="2025-06-13T17:36:29 IST" name="verifyRegisterWithNewEmail" description="Test Case 1: Register User with new email" finished-at="2025-06-13T17:36:50 IST" duration-ms="21006" status="PASS">
+        <test-method signature="verifySubscriptionInCartPage()[pri:0, instance:com.ae.tests.SubscriptionTest@4351c8c3]" started-at="2025-06-14T11:40:41 IST" name="verifySubscriptionInCartPage" description="Test Case 11: Verify Subscription in Cart page" finished-at="2025-06-14T11:40:45 IST" duration-ms="3577" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyRegisterWithNewEmail -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.RegisterTest@3f6db3fb]" started-at="2025-06-13T17:36:50 IST" name="tearDown" finished-at="2025-06-13T17:36:51 IST" duration-ms="620" status="PASS">
+        </test-method> <!-- verifySubscriptionInCartPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.SubscriptionTest@4351c8c3]" started-at="2025-06-14T11:40:45 IST" name="tearDown" finished-at="2025-06-14T11:40:45 IST" duration-ms="421" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.SubscriptionTest@4351c8c3]" started-at="2025-06-14T11:40:45 IST" name="setup" finished-at="2025-06-14T11:40:51 IST" duration-ms="5517" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifySubscriptionInHomePage()[pri:0, instance:com.ae.tests.SubscriptionTest@4351c8c3]" started-at="2025-06-14T11:40:51 IST" name="verifySubscriptionInHomePage" description="Test Case 10: Verify Subscription in home page" finished-at="2025-06-14T11:40:53 IST" duration-ms="2372" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySubscriptionInHomePage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.SubscriptionTest@4351c8c3]" started-at="2025-06-14T11:40:53 IST" name="tearDown" finished-at="2025-06-14T11:40:54 IST" duration-ms="535" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ae.tests.SubscriptionTest -->
+      <class name="com.ae.tests.RegisterTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.RegisterTest@14dda234]" started-at="2025-06-14T11:34:26 IST" name="setup" finished-at="2025-06-14T11:34:35 IST" duration-ms="8714" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testToRegisterUserWithNewEmail()[pri:0, instance:com.ae.tests.RegisterTest@14dda234]" started-at="2025-06-14T11:34:35 IST" name="testToRegisterUserWithNewEmail" description="Test Case 1: Register User" finished-at="2025-06-14T11:35:25 IST" duration-ms="50921" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToRegisterUserWithNewEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.RegisterTest@14dda234]" started-at="2025-06-14T11:35:26 IST" name="tearDown" finished-at="2025-06-14T11:35:26 IST" duration-ms="863" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.RegisterTest@14dda234]" started-at="2025-06-14T11:35:26 IST" name="setup" finished-at="2025-06-14T11:35:33 IST" duration-ms="6920" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testToRegisterUserWithExistingEmail()[pri:1, instance:com.ae.tests.RegisterTest@14dda234]" started-at="2025-06-14T11:35:33 IST" name="testToRegisterUserWithExistingEmail" description="Test Case 5: Register User with existing email." finished-at="2025-06-14T11:35:39 IST" duration-ms="5322" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToRegisterUserWithExistingEmail -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.RegisterTest@14dda234]" started-at="2025-06-14T11:35:39 IST" name="tearDown" finished-at="2025-06-14T11:35:39 IST" duration-ms="465" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.ae.tests.RegisterTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.ae.tests.TestCasesPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.TestCasesPageTest@3381b4fc]" started-at="2025-06-14T11:40:54 IST" name="setup" finished-at="2025-06-14T11:40:57 IST" duration-ms="3373" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testToVerifyTestCasesPage()[pri:0, instance:com.ae.tests.TestCasesPageTest@3381b4fc]" started-at="2025-06-14T11:40:57 IST" name="testToVerifyTestCasesPage" description="Test Case 7: Verify Test Cases Page" finished-at="2025-06-14T11:41:02 IST" duration-ms="5064" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToVerifyTestCasesPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.TestCasesPageTest@3381b4fc]" started-at="2025-06-14T11:41:02 IST" name="tearDown" finished-at="2025-06-14T11:41:03 IST" duration-ms="406" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ae.tests.TestCasesPageTest -->
+      <class name="com.ae.tests.CartPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.CartPageTest@278bb07e]" started-at="2025-06-14T11:39:49 IST" name="setup" finished-at="2025-06-14T11:39:55 IST" duration-ms="5706" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testToVerifyProductQuantityInCart()[pri:4, instance:com.ae.tests.CartPageTest@278bb07e]" started-at="2025-06-14T11:39:55 IST" name="testToVerifyProductQuantityInCart" description="Test to verify quantity of the product in the cart." finished-at="2025-06-14T11:40:02 IST" duration-ms="6916" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToVerifyProductQuantityInCart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.CartPageTest@278bb07e]" started-at="2025-06-14T11:40:02 IST" name="tearDown" finished-at="2025-06-14T11:40:03 IST" duration-ms="638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.CartPageTest@278bb07e]" started-at="2025-06-14T11:40:03 IST" name="setup" finished-at="2025-06-14T11:40:06 IST" duration-ms="3575" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testToRemoveProductsFromCart()[pri:5, instance:com.ae.tests.CartPageTest@278bb07e]" started-at="2025-06-14T11:40:06 IST" name="testToRemoveProductsFromCart" description="Test Case 17: Remove Products From Cart." finished-at="2025-06-14T11:40:33 IST" duration-ms="26937" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToRemoveProductsFromCart -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.CartPageTest@278bb07e]" started-at="2025-06-14T11:40:33 IST" name="tearDown" finished-at="2025-06-14T11:40:34 IST" duration-ms="690" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ae.tests.CartPageTest -->
+      <class name="com.ae.tests.CheckoutTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.CheckoutTest@246f8b8b]" started-at="2025-06-14T11:37:28 IST" name="setup" finished-at="2025-06-14T11:37:34 IST" duration-ms="5792" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testToRegisterWhileCheckout()[pri:0, instance:com.ae.tests.CheckoutTest@246f8b8b]" started-at="2025-06-14T11:37:34 IST" name="testToRegisterWhileCheckout" description="Test Case 14: Place Order: Register while Checkout." finished-at="2025-06-14T11:38:13 IST" duration-ms="38299" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToRegisterWhileCheckout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.CheckoutTest@246f8b8b]" started-at="2025-06-14T11:38:13 IST" name="tearDown" finished-at="2025-06-14T11:38:13 IST" duration-ms="594" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.CheckoutTest@246f8b8b]" started-at="2025-06-14T11:38:13 IST" name="setup" finished-at="2025-06-14T11:38:17 IST" duration-ms="3613" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testToRegisterBeforeCheckout()[pri:1, instance:com.ae.tests.CheckoutTest@246f8b8b]" started-at="2025-06-14T11:38:17 IST" name="testToRegisterBeforeCheckout" description="Test Case 15: Place Order: Register before Checkout" finished-at="2025-06-14T11:38:55 IST" duration-ms="38641" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToRegisterBeforeCheckout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.CheckoutTest@246f8b8b]" started-at="2025-06-14T11:38:55 IST" name="tearDown" finished-at="2025-06-14T11:38:56 IST" duration-ms="627" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.CheckoutTest@246f8b8b]" started-at="2025-06-14T11:38:56 IST" name="setup" finished-at="2025-06-14T11:39:02 IST" duration-ms="5950" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testToLoginBeforeCheckout()[pri:2, instance:com.ae.tests.CheckoutTest@246f8b8b]" started-at="2025-06-14T11:39:02 IST" name="testToLoginBeforeCheckout" description="Test Case 16: Place Order: Login before Checkout" finished-at="2025-06-14T11:39:49 IST" duration-ms="46814" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToLoginBeforeCheckout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.CheckoutTest@246f8b8b]" started-at="2025-06-14T11:39:49 IST" name="tearDown" finished-at="2025-06-14T11:39:49 IST" duration-ms="482" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ae.tests.CheckoutTest -->
+      <class name="com.ae.tests.ProductsPageTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.ProductsPageTest@312ab28e]" started-at="2025-06-14T11:37:04 IST" name="setup" finished-at="2025-06-14T11:37:09 IST" duration-ms="5739" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyAllProductsAndProductDetailsPage()[pri:0, instance:com.ae.tests.ProductsPageTest@312ab28e]" started-at="2025-06-14T11:37:09 IST" name="verifyAllProductsAndProductDetailsPage" description="Test Case 8: Verify All Products and product detail page" finished-at="2025-06-14T11:37:16 IST" duration-ms="7177" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyAllProductsAndProductDetailsPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.ProductsPageTest@312ab28e]" started-at="2025-06-14T11:37:17 IST" name="tearDown" finished-at="2025-06-14T11:37:17 IST" duration-ms="395" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ae.tests.ProductsPageTest -->
+      <class name="com.ae.tests.ContactUsTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.ContactUsTest@6bea52d4]" started-at="2025-06-14T11:41:03 IST" name="setup" finished-at="2025-06-14T11:41:09 IST" duration-ms="6367" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testContactUsForm()[pri:0, instance:com.ae.tests.ContactUsTest@6bea52d4]" started-at="2025-06-14T11:41:09 IST" name="testContactUsForm" description="Test Case 6: Contact Us Form" finished-at="2025-06-14T11:41:20 IST" duration-ms="10521" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testContactUsForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.ContactUsTest@6bea52d4]" started-at="2025-06-14T11:41:20 IST" name="tearDown" finished-at="2025-06-14T11:41:20 IST" duration-ms="446" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ae.tests.ContactUsTest -->
+      <class name="com.ae.tests.SearchTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.SearchTest@5644dc81]" started-at="2025-06-14T11:37:17 IST" name="setup" finished-at="2025-06-14T11:37:23 IST" duration-ms="5759" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyProductsRelatedToSearchAreVisible()[pri:0, instance:com.ae.tests.SearchTest@5644dc81]" started-at="2025-06-14T11:37:23 IST" name="verifyProductsRelatedToSearchAreVisible" description="Test Case 9: Search Product" finished-at="2025-06-14T11:37:28 IST" duration-ms="5267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyProductsRelatedToSearchAreVisible -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.SearchTest@5644dc81]" started-at="2025-06-14T11:37:28 IST" name="tearDown" finished-at="2025-06-14T11:37:28 IST" duration-ms="543" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ae.tests.SearchTest -->
+      <class name="com.ae.tests.LogoutTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.LogoutTest@1522d8a0]" started-at="2025-06-14T11:36:30 IST" name="setup" finished-at="2025-06-14T11:36:40 IST" duration-ms="9532" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="testToLogoutUser()[pri:0, instance:com.ae.tests.LogoutTest@1522d8a0]" started-at="2025-06-14T11:36:40 IST" name="testToLogoutUser" description="Test Case 4: Logout User" finished-at="2025-06-14T11:37:03 IST" duration-ms="23061" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testToLogoutUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.LogoutTest@1522d8a0]" started-at="2025-06-14T11:37:03 IST" name="tearDown" finished-at="2025-06-14T11:37:04 IST" duration-ms="650" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ae.tests.LogoutTest -->
+      <class name="com.ae.tests.LoginTest">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.LoginTest@bff34c6]" started-at="2025-06-14T11:35:39 IST" name="setup" finished-at="2025-06-14T11:35:45 IST" duration-ms="6220" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginWithCorrectEmailAndPassword()[pri:0, instance:com.ae.tests.LoginTest@bff34c6]" started-at="2025-06-14T11:35:45 IST" name="verifyLoginWithCorrectEmailAndPassword" description="Test Case 2: Login User with correct email and password" finished-at="2025-06-14T11:36:16 IST" duration-ms="30461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithCorrectEmailAndPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.LoginTest@bff34c6]" started-at="2025-06-14T11:36:16 IST" name="tearDown" finished-at="2025-06-14T11:36:17 IST" duration-ms="736" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.ae.tests.LoginTest@bff34c6]" started-at="2025-06-14T11:36:17 IST" name="setup" finished-at="2025-06-14T11:36:23 IST" duration-ms="6023" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="verifyLoginWithIncorrectEmailAndPassword()[pri:1, instance:com.ae.tests.LoginTest@bff34c6]" started-at="2025-06-14T11:36:23 IST" name="verifyLoginWithIncorrectEmailAndPassword" description="Test Case 3: Login User with incorrect email and password" finished-at="2025-06-14T11:36:30 IST" duration-ms="7335" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLoginWithIncorrectEmailAndPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ae.tests.LoginTest@bff34c6]" started-at="2025-06-14T11:36:30 IST" name="tearDown" finished-at="2025-06-14T11:36:30 IST" duration-ms="425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ae.tests.LoginTest -->
+    </test> <!-- Test -->
+  </suite> <!-- AE automation Suite -->
 </testng-results>

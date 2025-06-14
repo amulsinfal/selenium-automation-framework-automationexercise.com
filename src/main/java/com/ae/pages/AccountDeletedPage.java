@@ -18,25 +18,25 @@ public class AccountDeletedPage extends BasePage {
 		super(driver);
 	}
 
-	public boolean isAccountDeletedHeaderVisible() {
+	public boolean isAccountDeletedLabelVisible() {
 		try {
 			WebElement element = waitForElementToBeVisible(lblAccountDeletedHeader);
-			log.info("Account deleted page header is displayed on the Account deleted page");
+			log.info("Account deleted label is displayed on the Account deleted page");
 			return element.isDisplayed();
 		} catch (Exception e) {
-			log.info("Account deleted page header not displayed on the Account deleted  page. Error occured : " + e.getMessage());
+			log.info("Account deleted label not displayed on the Account deleted  page. Error occured : " + e.getMessage());
 			return false;
 		}
 	}
 
-	public String getAccountDeletedHeaderText() {
+	public String getAccountDeletedLabelText() {
 		try {
 			WebElement element = waitForElementToBeVisible(lblAccountDeletedHeader);
-			log.info("Account deleted header text retrived is '" + element.getText() + "'.");
+			log.info("Account deleted label text retrived is '" + element.getText() + "'.");
 			return element.getText();
 		} catch (Exception e) {
-			log.info("Unable to retrive Account deleted page header text on the Account deleted page. Error occured : " + e.getMessage());
-			return "Unable to retrive Account deleted page header text on the Account deleted page.";
+			log.info("Unable to retrive Account deleted label text on the Account deleted page. Error occured : " + e.getMessage());
+			return "Unable to retrive Account deleted label text on the Account deleted page.";
 		}
 	}
 

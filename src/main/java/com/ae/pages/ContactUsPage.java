@@ -26,7 +26,7 @@ public class ContactUsPage extends BasePage {
 		super(driver);
 	}
 
-	public ContactUsPage enterName(String name) {
+	private ContactUsPage enterName(String name) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtName);
 			element.sendKeys(name);
@@ -38,7 +38,7 @@ public class ContactUsPage extends BasePage {
 		}
 	}
 
-	public ContactUsPage enterEmail(String email) {
+	private ContactUsPage enterEmail(String email) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtEmail);
 			element.sendKeys(email);
@@ -50,7 +50,7 @@ public class ContactUsPage extends BasePage {
 		}
 	}
 
-	public ContactUsPage enterSubject(String subject) {
+	private ContactUsPage enterSubject(String subject) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtsubject);
 			element.sendKeys(subject);
@@ -63,7 +63,7 @@ public class ContactUsPage extends BasePage {
 		}
 	}
 
-	public ContactUsPage enterMessage(String Message) {
+	private ContactUsPage enterMessage(String Message) {
 		try {
 			WebElement element = waitForElementToBeClickable(txtMessage);
 			element.sendKeys(Message);
@@ -126,7 +126,7 @@ public class ContactUsPage extends BasePage {
 
 	public ContactUsPage fillContactForm(Messages message) {
 		return enterName(message.getName()).enterEmail(message.getEmail()).enterSubject(message.getSubject())
-				.enterMessage(message.getMessage()).enterFilePath(message.getFilePath());
+				.enterMessage(message.getMessage());
 	}
 
 	public HomePage clickHome() {
@@ -163,14 +163,4 @@ public class ContactUsPage extends BasePage {
 		}
 	}
 
-	public boolean isContactUsPageVisible() {
-		try {
-			WebElement element = waitForElementToBeVisible(lblGetInTouch);
-			log.info("Contact Us page displayed is " + element.isDisplayed());
-			return element.isDisplayed();
-		} catch (Exception e) {
-			log.info("Contact Us Page not displayed. Error occured : " + e.getMessage());
-			return false;
-		}
-	}
 }

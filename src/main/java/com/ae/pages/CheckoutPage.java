@@ -118,5 +118,44 @@ public class CheckoutPage extends BasePage{
 			return null;
 		}
 	}
+
+	public String getProductPrice(String productName) {
+		try {
+			String xpathString = "//div[@id='cart_info']//tbody/tr/td[2]/h4/a[text()='" + productName
+					+ "']/ancestor::td/following-sibling::td[@class='cart_price']";
+			WebElement element = waitForElementToBeVisible(By.xpath(xpathString));
+			log.info("Price of '" + productName + "' is '" + element.getText() + "'.");
+			return element.getText().split(" ")[1].toString();
+		} catch (Exception e) {
+			log.info("Unable to retrive product price text. Error occured : " + e.getMessage());
+			return "Unable to retrive product price text.";
+		}
+	}
+
+	public String getProductQuantity(String productName) {
+		try {
+			String xpathString = "//div[@id='cart_info']//tbody/tr/td[2]/h4/a[text()='" + productName
+					+ "']/ancestor::td/following-sibling::td[@class='cart_quantity']/button";
+			WebElement element = waitForElementToBeVisible(By.xpath(xpathString));
+			log.info("Quantity of '" + productName + "' is '" + element.getText() + "'.");
+			return element.getText();
+		} catch (Exception e) {
+			log.info("Unable to retrive product quantity text. Error occured : " + e.getMessage());
+			return "Unable to retrive product quantity text.";
+		}
+	}
+	
+	public String getProductTotalAmount(String productName) {
+		try {
+			String xpathString = "//div[@id='cart_info']//tbody/tr/td[2]/h4/a[text()='" + productName
+					+ "']/ancestor::td/following-sibling::td[@class='cart_total']/p[@class='cart_total_price']";
+			WebElement element = waitForElementToBeVisible(By.xpath(xpathString));
+			log.info("Total amount of '" + productName + "' is '" + element.getText() + "'.");
+			return element.getText().split(" ")[1].toString();
+		} catch (Exception e) {
+			log.info("Unable to retrive product total amount text. Error occured : " + e.getMessage());
+			return "Unable to retrive product total amount text.";
+		}
+	}
 	
 }

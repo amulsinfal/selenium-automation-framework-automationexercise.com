@@ -7,7 +7,17 @@
 	</listeners>
 	<test thread-count="5" name="Test">
 		<classes>
-			<class name="com.ae.tests.LogoutTest" />
+      		<class name="com.ae.tests.RegisterTest"/>
+      		<class name="com.ae.tests.LoginTest"/>
+      		<class name="com.ae.tests.LogoutTest"/>		
+      		<class name="com.ae.tests.ProductsPageTest"/>
+            <class name="com.ae.tests.SearchTest"/>
+            <class name="com.ae.tests.CheckoutTest"/>
+      		<class name="com.ae.tests.CartPageTest"/>
+      		<class name="com.ae.tests.SubscriptionTest"/>
+      		<class name="com.ae.tests.TestCasesPageTest"/>
+      		<class name="com.ae.tests.ContactUsTest"/>
+      
 		</classes>
 	</test> <!--
 	Test -->

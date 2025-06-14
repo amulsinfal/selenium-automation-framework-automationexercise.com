@@ -11,20 +11,18 @@ public class LogoutTest extends BaseTest{
 	HomePage homePage;
 	SignupLoginPage signupLoginPage;
 	
-	/*
-	 * 1. Launch browser
-	 * 2. Navigate to url 'http://automationexercise.com'
-	 * 3. Click on 'Signup / Login' button
-	 * 4. Enter correct email address and password
-	 * 5. Click 'login' button
-	 * 6. Click 'Logout' button
-	 * 7. Verify that user is navigated to login page
-	 */
-	
 	@Test (priority = 0, description = "Test Case 4: Logout User")
-	public void verifyLogoutFromWebsite() {
+	public void testToLogoutUser() {
 		homePage = new HomePage(driver);
-		signupLoginPage = homePage.clickSignupLoginLink().enterLoginEmail("johndoe01@email.com").enterLoginPassword("johndoe").clickLogin().clickLogoutLink();
+		Assert.assertTrue(homePage.isHomePageVisible(),"Home page not visible.");
+		
+		signupLoginPage = homePage.clickSignupLoginLink();
+		Assert.assertTrue(signupLoginPage.isLoginToYourAccountLabelVisible()&&signupLoginPage.getLoginToYourAccountLabelText().equals("Login to your account"),"'Login to your account' label is missing or not visible.");
+		
+		homePage = homePage.clickSignupLoginLink().enterLoginEmail("johndoe02@email.com").enterLoginPassword("johndoe").clickLogin();
+		Assert.assertTrue(homePage.isLoggedInAsUsernameVisible() && homePage.getLoggedInAsUsernameText().equals("Logged in as johndoe02"), "'Logged in as username' label is missing or not visible.");
+		
+		signupLoginPage = homePage.clickLogoutLink();
 		Assert.assertTrue(signupLoginPage.isSignupLoginPageVisible(), "Signup / login page not displayed.");
 	}
 	

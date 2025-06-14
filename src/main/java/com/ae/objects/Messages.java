@@ -6,7 +6,6 @@ public class Messages {
 	private String email;
 	private String subject;
 	private String message;
-	private String filePath;
 
 	public String getName() {
 		return name;
@@ -38,14 +37,6 @@ public class Messages {
 
 	public void setMessage(String message) {
 		this.message = message;
-	}
-
-	public String getFilePath() {
-		return filePath;
-	}
-
-	public void setFilePath(String filePath) {
-		this.filePath = filePath;
 	}
 
 }

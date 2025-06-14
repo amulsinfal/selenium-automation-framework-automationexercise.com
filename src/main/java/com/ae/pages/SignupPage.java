@@ -5,10 +5,11 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.ae.base.BasePage;
+import com.ae.objects.CustomerAccountInformation;
+import com.ae.objects.CustomerAddressInformation;
 import com.ae.objects.Customers;
 
 public class SignupPage extends BasePage {
@@ -32,17 +33,15 @@ public class SignupPage extends BasePage {
 	private final By txtMobileNumber = By.id("mobile_number");
 	private final By btnCreateAccount = By.xpath("//button[@data-qa='create-account']");
 	private final By lblEnterAccInfo = By.xpath("//div[@class='login-form']/h2/b");
-	private final By lblAddressInfo = By
-			.xpath("//div[@id='uniform-optin']/parent::div[@class='checkbox']/following-sibling::h2/b");
 
 	public SignupPage(WebDriver driver) {
 		super(driver);
 	}
 
-	public SignupPage selectTitle(String title) {
+	private SignupPage selectTitle(String title) {
 		try {
 			String xpathString = "//input[@name='title' and @value='" + title + "']";
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath(xpathString)));
+			WebElement element = waitForElementToBeClickable(By.xpath(xpathString));
 			element.click();
 			log.info("Clicked on the title: " + title);
 			return this;
@@ -54,7 +53,7 @@ public class SignupPage extends BasePage {
 
 	public SignupPage enterPassword(String password) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(txtPassword));
+			WebElement element = waitForElementToBeClickable(txtPassword);
 			element.sendKeys(password);
 			log.info("'" + password + "' entered in the password text box.");
 			return this;
@@ -65,9 +64,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage selectDay(String day) {
+	private SignupPage selectDay(String day) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(drpDays));
+			WebElement element = waitForElementToBeClickable(drpDays);
 			Select select = new Select(element);
 			select.selectByVisibleText(day);
 			log.info("'" + day + "' selected in the day dropdown list box.");
@@ -79,9 +78,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage selectMonth(String month) {
+	private SignupPage selectMonth(String month) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(drpMonths));
+			WebElement element = waitForElementToBeClickable(drpMonths);
 			Select select = new Select(element);
 			select.selectByVisibleText(month);
 			log.info("'" + month + "' selected in the month dropdown list box.");
@@ -93,9 +92,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage selectYear(String year) {
+	private SignupPage selectYear(String year) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(drpYears));
+			WebElement element = waitForElementToBeClickable(drpYears);
 			Select select = new Select(element);
 			select.selectByVisibleText(year);
 			log.info("'" + year + "' selected in the year dropdown list box.");
@@ -109,7 +108,7 @@ public class SignupPage extends BasePage {
 
 	public SignupPage selectNewsLetter(String value) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(chkNewsletter));
+			WebElement element = waitForElementToBeClickable(chkNewsletter);
 			if (value.equalsIgnoreCase("Yes")) {
 				element.click();
 				log.info("NewsLetter checkbox selected.");
@@ -125,7 +124,7 @@ public class SignupPage extends BasePage {
 
 	public SignupPage selectSpecialOffer(String value) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(chkSpecialOffer));
+			WebElement element = waitForElementToBeClickable(chkSpecialOffer);
 			if (value.equalsIgnoreCase("Yes")) {
 				element.click();
 				log.info("Speical offer checkbox selected.");
@@ -139,9 +138,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage enterFirstName(String firstName) {
+	private SignupPage enterFirstName(String firstName) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(txtFirstName));
+			WebElement element = waitForElementToBeClickable(txtFirstName);
 			element.sendKeys(firstName);
 			log.info("'" + firstName + "' entered in the firstName text box.");
 			return this;
@@ -152,9 +151,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage enterLastName(String lastName) {
+	private SignupPage enterLastName(String lastName) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(txtLastName));
+			WebElement element = waitForElementToBeClickable(txtLastName);
 			element.sendKeys(lastName);
 			log.info("'" + lastName + "' entered in the lastName text box.");
 			return this;
@@ -165,9 +164,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage enterCompany(String company) {
+	private SignupPage enterCompany(String company) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(txtCompany));
+			WebElement element = waitForElementToBeClickable(txtCompany);
 			element.sendKeys(company);
 			log.info("'" + company + "' entered in the company text box.");
 			return this;
@@ -178,9 +177,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage enterAddress1(String address1) {
+	private SignupPage enterAddress1(String address1) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(txtAddress1));
+			WebElement element = waitForElementToBeClickable(txtAddress1);
 			element.sendKeys(address1);
 			log.info("'" + address1 + "' entered in the address1 text box.");
 			return this;
@@ -191,9 +190,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage enterAddress2(String address2) {
+	private SignupPage enterAddress2(String address2) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(txtAddress2));
+			WebElement element = waitForElementToBeClickable(txtAddress2);
 			element.sendKeys(address2);
 			log.info("'" + address2 + "' entered in the address2 text box.");
 			return this;
@@ -204,9 +203,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage selectCountry(String country) {
+	private SignupPage selectCountry(String country) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(drpCountry));
+			WebElement element = waitForElementToBeClickable(drpCountry);
 			Select select = new Select(element);
 			select.selectByVisibleText(country);
 			log.info("'" + country + "' selected in the country dropdown list box.");
@@ -218,9 +217,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage enterState(String state) {
+	private SignupPage enterState(String state) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(txtState));
+			WebElement element = waitForElementToBeClickable(txtState);
 			element.sendKeys(state);
 			log.info("'" + state + "' entered in the state text box.");
 			return this;
@@ -230,9 +229,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage enterCity(String city) {
+	private SignupPage enterCity(String city) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(txtCity));
+			WebElement element = waitForElementToBeClickable(txtCity);
 			element.sendKeys(city);
 			log.info("'" + city + "' entered in the city text box.");
 			return this;
@@ -242,9 +241,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage enterZipcode(String zipcode) {
+	private SignupPage enterZipcode(String zipcode) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(txtZipcode));
+			WebElement element = waitForElementToBeClickable(txtZipcode);
 			element.sendKeys(zipcode);
 			log.info("'" + zipcode + "' entered in the zipcode text box.");
 			return this;
@@ -255,9 +254,9 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage enterMobile(String mobileNumber) {
+	private SignupPage enterMobile(String mobileNumber) {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(txtMobileNumber));
+			WebElement element = waitForElementToBeClickable(txtMobileNumber);
 			element.sendKeys(mobileNumber);
 			log.info("'" + mobileNumber + "' entered in the mobile number text box.");
 			return this;
@@ -270,7 +269,7 @@ public class SignupPage extends BasePage {
 
 	public AccountCreatedPage clickCreateAccount() {
 		try {
-			WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnCreateAccount));
+			WebElement element = waitForElementToBeClickable(btnCreateAccount);
 			element.click();
 			log.info("Clicked on the Create Account button.");
 			log.info("Navigating to Account created page.");
@@ -281,15 +280,17 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public SignupPage setCustomer(Customers customer) {
-		return selectTitle(customer.getTitle()).enterPassword(customer.getPassword()).selectDay(customer.getDay())
-				.selectMonth(customer.getMonth()).selectYear(customer.getYear())
-				.selectNewsLetter(customer.getNewsletter()).selectSpecialOffer(customer.getSpecialOffer())
-				.enterFirstName(customer.getFirstName()).enterLastName(customer.getLastName())
-				.enterCompany(customer.getCompany()).enterAddress1(customer.getAddress1())
-				.enterAddress2(customer.getAddress2()).selectCountry(customer.getCountry())
-				.enterState(customer.getState()).enterCity(customer.getCity()).enterZipcode(customer.getZipcode())
-				.enterMobile(customer.getMobileNumber());
+	public SignupPage fillCustomerAccountInformation(CustomerAccountInformation customerAccountInformation) {
+		return selectTitle(customerAccountInformation.getTitle()).enterPassword(customerAccountInformation.getPassword()).selectDay(customerAccountInformation.getDay())
+				.selectMonth(customerAccountInformation.getMonth()).selectYear(customerAccountInformation.getYear());
+	}
+	
+	public SignupPage fillCustomerAddressInformation(CustomerAddressInformation customerAddressInformation) {
+		return enterFirstName(customerAddressInformation.getFirstName()).enterLastName(customerAddressInformation.getLastName())
+				.enterCompany(customerAddressInformation.getCompany()).enterAddress1(customerAddressInformation.getAddress1())
+				.enterAddress2(customerAddressInformation.getAddress2()).selectCountry(customerAddressInformation.getCountry())
+				.enterState(customerAddressInformation.getState()).enterCity(customerAddressInformation.getCity()).enterZipcode(customerAddressInformation.getZipcode())
+				.enterMobile(customerAddressInformation.getMobileNumber());
 	}
 
 	public SignupPage fillCustomerInformation(Customers customer) {
@@ -303,9 +304,9 @@ public class SignupPage extends BasePage {
 				.enterMobile(customer.getMobileNumber());
 	}
 
-	public boolean isEnterAccountInformationLabelIsVisible() {
+	public boolean isEnterAccountInformationLabelVisible() {
 		try {
-			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(lblEnterAccInfo));
+			WebElement element = waitForElementToBeVisible(lblEnterAccInfo);
 			log.info("Account information header is displayed on the Signup page");
 			return element.isDisplayed();
 		} catch (Exception e) {
@@ -314,38 +315,15 @@ public class SignupPage extends BasePage {
 		}
 	}
 
-	public String getEnterAccountInformationText() {
+	public String getEnterAccountInformationLabelText() {
 		try {
-			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(lblEnterAccInfo));
+			WebElement element = waitForElementToBeVisible(lblEnterAccInfo);
 			log.info("Account information header text retrived is '" + element.getText() + "'.");
 			return element.getText();
 		} catch (Exception e) {
 			log.info("Unable to retrive Account information header text on the Signup page. Error occured : "
 					+ e.getMessage());
 			return "Unable to retrive Account information header text on the Signup page.";
-		}
-	}
-
-	public boolean isAddressInformationLabelIsVisible() {
-		try {
-			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(lblAddressInfo));
-			log.info("Address information header is displayed on the Signup page");
-			return element.isDisplayed();
-		} catch (Exception e) {
-			log.info("Address information header not displayed on the Signup page. Error occured : " + e.getMessage());
-			return false;
-		}
-	}
-
-	public String getAddressInformationText() {
-		try {
-			WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(lblAddressInfo));
-			log.info("Address information header text retrived is '" + element.getText() + "'.");
-			return element.getText();
-		} catch (Exception e) {
-			log.info("Unable to retrive Address information header text on the Signup page. Error occured : "
-					+ e.getMessage());
-			return "Unable to retrive Address information header text on the Signup page.";
 		}
 	}
 

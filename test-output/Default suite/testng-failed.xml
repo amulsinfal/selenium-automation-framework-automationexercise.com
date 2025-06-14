@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.ae.tests.RegisterTest">
+      <class name="com.ae.tests.CheckoutTest">
         <methods>
-          <include name="verifyRegisterWithNewEmail"/>
+          <include name="testToLoginBeforeCheckout"/>
           <include name="setup"/>
           <include name="tearDown"/>
         </methods>
-      </class> <!-- com.ae.tests.RegisterTest -->
+      </class> <!-- com.ae.tests.CheckoutTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -23,26 +23,21 @@ public class CartPage extends BasePage {
 	private final By lblCartEmptyText = By.xpath("//span[@id='empty_cart']/p/b");
 	private final By btnProceedToCheckout = By.xpath("//a[@class='btn btn-default check_out']");
 	private final By lnkRegisterLogin = By.xpath("//div[@class='modal-body']/descendant::a[@href='/login']");
+	private final By lblCartBreadCrumb = By.xpath("//div[@class='breadcrumbs']/ol/li[2]");
 
 	public CartPage(WebDriver driver) {
 		super(driver);
 	}
 
-	public boolean isProductPresent(String[] inputProducts) {
-		boolean flag = false;
-		for (String name : inputProducts) {
-			if (!driver
-					.findElements(By.xpath("//table[@id='cart_info_table']/tbody/tr/td[2]/h4/a[text()='" + name + "']"))
-					.isEmpty()) {
-				log.info("Product found in the cart : " + name);
-				flag = true;
-			} else {
-				flag = false;
-				log.info("Product missing in the cart : " + name);
-				break;
-			}
+	public boolean isCartPageVisible() {
+		try {
+			WebElement element = waitForElementToBeVisible(lblCartBreadCrumb);
+			log.info("Cart page is visible.");
+			return element.isDisplayed();
+		} catch (Exception e) {
+			log.info("Car Page not visible. Error occured : " + e.getMessage());
+			return false;
 		}
-		return flag;
 	}
 
 	public boolean isSubscriptionLabelDisplayed() {
@@ -67,7 +62,7 @@ public class CartPage extends BasePage {
 		}
 	}
 
-	public CartPage clickSubscribe() {
+	public CartPage clickArrowButton() {
 		try {
 			WebElement element = waitForElementToBeClickable(btnSubscribe);
 			element.click();
@@ -126,19 +121,6 @@ public class CartPage extends BasePage {
 		}
 	}
 
-	public String getProductPrice(String productName) {
-		try {
-			String xpathString = "//table[@id='cart_info_table']/tbody/tr/td[2]/h4/a[text()='" + productName
-					+ "']/ancestor::td/following-sibling::td[@class='cart_price']";
-			WebElement element = waitForElementToBeVisible(By.xpath(xpathString));
-			log.info("Price of '" + productName + "' is '" + element.getText() + "'.");
-			return element.getText().split(" ")[1].toString();
-		} catch (Exception e) {
-			log.info("Unable to retrive product price text. Error occured : " + e.getMessage());
-			return "Unable to retrive product price text.";
-		}
-	}
-
 	public String getProductQuantity(String productName) {
 		try {
 			String xpathString = "//table[@id='cart_info_table']/tbody/tr/td[2]/h4/a[text()='" + productName
@@ -152,35 +134,7 @@ public class CartPage extends BasePage {
 		}
 	}
 
-	public String getProductTotalAmount(String productName) {
-		try {
-			String xpathString = "//table[@id='cart_info_table']/tbody/tr/td[2]/h4/a[text()='" + productName
-					+ "']/ancestor::td/following-sibling::td[@class='cart_total']/p[@class='cart_total_price']";
-			WebElement element = waitForElementToBeVisible(By.xpath(xpathString));
-			log.info("Total amount of '" + productName + "' is '" + element.getText() + "'.");
-			return element.getText().split(" ")[1].toString();
-		} catch (Exception e) {
-			log.info("Unable to retrive product total amount text. Error occured : " + e.getMessage());
-			return "Unable to retrive product total amount text.";
-		}
-	}
-
-	public CartPage removeProduct(String productName) {
-		try {
-			String xpathString = "//table[@id='cart_info_table']/tbody/tr/td[2]/h4/a[text()='" + productName
-					+ "']/ancestor::td/following-sibling::td[@class='cart_delete']/a[@class='cart_quantity_delete']";
-			WebElement element = waitForElementToBeVisible(By.xpath(xpathString));
-			log.info("Deleting the product from cart : '" + productName + "'.");
-			element.click();
-			return this;
-		} catch (Exception e) {
-			log.info("Unable to delete product from the cart. Error occured : " + e.getMessage());
-			return this;
-		}
-	}
-
-	public CartPage removeProducts(String[] productNames) {
-//		boolean flag = false;
+	public CartPage clickXButton(String[] productNames) {
 		List<String> foundProducts = new ArrayList<String>();
 		List<String> missingProducts = new ArrayList<String>();
 		for (String productName : productNames) {
@@ -200,36 +154,28 @@ public class CartPage extends BasePage {
 			}
 		}
 		if (missingProducts.size() > 0) {
-//			flag = false;
 			log.info("Products missing in the cart : " + missingProducts);
 		} else {
-//			flag = true;
-			log.info("Products deleted from the list : " + foundProducts);
+			log.info("Products removed from the list : " + foundProducts);
 		}
-//		return flag;
 		return this;
 	}
 
-	public boolean isCartEmptyLabelVisible() {
+	public boolean isCartEmpty() {
 		try {
-			WebElement element = waitForElementToBeVisible(lblCartEmptyText);
-			log.info("'Cart is Empty' label is displayed on cart page.");
-			return element.isDisplayed();
+			waitForElementToBeVisible(lblCartEmptyText);
+			if (driver.findElements(By.xpath("//table[@id='cart_info_table']/tbody/tr")).isEmpty()) {
+				log.info("Cart is empty.");
+				return true;
+			} else {
+				log.info("Cart is not empty.");
+				return false;
+			}
 		} catch (Exception e) {
-			log.info("'Cart is Empty' label not displayed on cart page. Error occured : " + e.getMessage());
+			log.info("Unable to check if cart is empty. Error occured : " + e.getMessage());
 			return false;
 		}
-	}
 
-	public String getCartEmptyText() {
-		try {
-			WebElement element = waitForElementToBeVisible(lblCartEmptyText);
-			log.info("Cart is Empty text retrived is '" + element.getText() + "'.");
-			return element.getText();
-		} catch (Exception e) {
-			log.info("Unable to retrive Cart is Empty text. Error occured : " + e.getMessage());
-			return "Unable to retrive Cart is Empty text.";
-		}
 	}
 
 	public CartPage clickProceedToCheckout() {
