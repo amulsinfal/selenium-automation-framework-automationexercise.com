@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" title="Collapse/expand all the suites" class="collapse-all-link">
+          <img src="collapseall.gif" class="collapse-all-icon">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" panel-name="suite-AE_automation_Suite" class="navigator-link">
+              <span class="suite-name border-passed">AE automation Suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" panel-name="test-xml-AE_automation_Suite" class="navigator-link ">
+                    <span>C:\Software_Testing\Automation_Testing\projects\eclipse-workspace\hybrid-selenium-automation-framework-automationexercise.com\src\test\resources\runner\testng.xml</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="testlist-AE_automation_Suite" class="navigator-link ">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="group-AE_automation_Suite" class="navigator-link ">
+                    <span>2 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="times-AE_automation_Suite" class="navigator-link ">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="reporter-AE_automation_Suite" class="navigator-link ">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="ignored-methods-AE_automation_Suite" class="navigator-link ">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" panel-name="chronological-AE_automation_Suite" class="navigator-link ">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">16 methods,   16 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-AE_automation_Suite" class="hide-methods passed suite-AE_automation_Suite"> (hide)</a> <!-- hide-methods passed suite-AE_automation_Suite -->
+                      <a href="#" panel-name="suite-AE_automation_Suite" class="show-methods passed suite-AE_automation_Suite"> (show)</a> <!-- show-methods passed suite-AE_automation_Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-AE_automation_Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.ContactUsTest" class="method navigator-link" hash-for-method="testContactUsForm">testContactUsForm</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.CheckoutTest" class="method navigator-link" hash-for-method="testToLoginBeforeCheckout">testToLoginBeforeCheckout</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.LogoutTest" class="method navigator-link" hash-for-method="testToLogoutUser">testToLogoutUser</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.CheckoutTest" class="method navigator-link" hash-for-method="testToRegisterBeforeCheckout">testToRegisterBeforeCheckout</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.RegisterTest" class="method navigator-link" hash-for-method="testToRegisterUserWithExistingEmail">testToRegisterUserWithExistingEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.RegisterTest" class="method navigator-link" hash-for-method="testToRegisterUserWithNewEmail">testToRegisterUserWithNewEmail</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.CheckoutTest" class="method navigator-link" hash-for-method="testToRegisterWhileCheckout">testToRegisterWhileCheckout</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.CartPageTest" class="method navigator-link" hash-for-method="testToRemoveProductsFromCart">testToRemoveProductsFromCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.CartPageTest" class="method navigator-link" hash-for-method="testToVerifyProductQuantityInCart">testToVerifyProductQuantityInCart</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.TestCasesPageTest" class="method navigator-link" hash-for-method="testToVerifyTestCasesPage">testToVerifyTestCasesPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.ProductsPageTest" class="method navigator-link" hash-for-method="verifyAllProductsAndProductDetailsPage">verifyAllProductsAndProductDetailsPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.LoginTest" class="method navigator-link" hash-for-method="verifyLoginWithCorrectEmailAndPassword">verifyLoginWithCorrectEmailAndPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.LoginTest" class="method navigator-link" hash-for-method="verifyLoginWithIncorrectEmailAndPassword">verifyLoginWithIncorrectEmailAndPassword</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.SearchTest" class="method navigator-link" hash-for-method="verifyProductsRelatedToSearchAreVisible">verifyProductsRelatedToSearchAreVisible</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.SubscriptionTest" class="method navigator-link" hash-for-method="verifySubscriptionInCartPage">verifySubscriptionInCartPage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-AE_automation_Suite" title="com.ae.tests.SubscriptionTest" class="method navigator-link" hash-for-method="verifySubscriptionInHomePage">verifySubscriptionInHomePage</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-AE_automation_Suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-AE_automation_Suite" class="panel AE_automation_Suite">
+          <div class="suite-AE_automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ae.tests.LoginTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginWithCorrectEmailAndPassword">
+                  </a> <!-- verifyLoginWithCorrectEmailAndPassword -->
+                  <span class="method-name">verifyLoginWithCorrectEmailAndPassword</span>
+                  <em>
+(Test Case 2: Login User with correct email and password)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyLoginWithIncorrectEmailAndPassword">
+                  </a> <!-- verifyLoginWithIncorrectEmailAndPassword -->
+                  <span class="method-name">verifyLoginWithIncorrectEmailAndPassword</span>
+                  <em>
+(Test Case 3: Login User with incorrect email and password)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AE_automation_Suite-class-passed -->
+          <div class="suite-AE_automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ae.tests.CartPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testToRemoveProductsFromCart">
+                  </a> <!-- testToRemoveProductsFromCart -->
+                  <span class="method-name">testToRemoveProductsFromCart</span>
+                  <em>
+(Test Case 17: Remove Products From Cart.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testToVerifyProductQuantityInCart">
+                  </a> <!-- testToVerifyProductQuantityInCart -->
+                  <span class="method-name">testToVerifyProductQuantityInCart</span>
+                  <em>
+(Test to verify quantity of the product in the cart.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AE_automation_Suite-class-passed -->
+          <div class="suite-AE_automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ae.tests.ContactUsTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testContactUsForm">
+                  </a> <!-- testContactUsForm -->
+                  <span class="method-name">testContactUsForm</span>
+                  <em>
+(Test Case 6: Contact Us Form)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AE_automation_Suite-class-passed -->
+          <div class="suite-AE_automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ae.tests.ProductsPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyAllProductsAndProductDetailsPage">
+                  </a> <!-- verifyAllProductsAndProductDetailsPage -->
+                  <span class="method-name">verifyAllProductsAndProductDetailsPage</span>
+                  <em>
+(Test Case 8: Verify All Products and product detail page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AE_automation_Suite-class-passed -->
+          <div class="suite-AE_automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ae.tests.CheckoutTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testToLoginBeforeCheckout">
+                  </a> <!-- testToLoginBeforeCheckout -->
+                  <span class="method-name">testToLoginBeforeCheckout</span>
+                  <em>
+(Test Case 16: Place Order: Login before Checkout)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testToRegisterBeforeCheckout">
+                  </a> <!-- testToRegisterBeforeCheckout -->
+                  <span class="method-name">testToRegisterBeforeCheckout</span>
+                  <em>
+(Test Case 15: Place Order: Register before Checkout)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testToRegisterWhileCheckout">
+                  </a> <!-- testToRegisterWhileCheckout -->
+                  <span class="method-name">testToRegisterWhileCheckout</span>
+                  <em>
+(Test Case 14: Place Order: Register while Checkout.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AE_automation_Suite-class-passed -->
+          <div class="suite-AE_automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ae.tests.LogoutTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testToLogoutUser">
+                  </a> <!-- testToLogoutUser -->
+                  <span class="method-name">testToLogoutUser</span>
+                  <em>
+(Test Case 4: Logout User)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AE_automation_Suite-class-passed -->
+          <div class="suite-AE_automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ae.tests.SubscriptionTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySubscriptionInCartPage">
+                  </a> <!-- verifySubscriptionInCartPage -->
+                  <span class="method-name">verifySubscriptionInCartPage</span>
+                  <em>
+(Test Case 11: Verify Subscription in Cart page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifySubscriptionInHomePage">
+                  </a> <!-- verifySubscriptionInHomePage -->
+                  <span class="method-name">verifySubscriptionInHomePage</span>
+                  <em>
+(Test Case 10: Verify Subscription in home page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AE_automation_Suite-class-passed -->
+          <div class="suite-AE_automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ae.tests.TestCasesPageTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testToVerifyTestCasesPage">
+                  </a> <!-- testToVerifyTestCasesPage -->
+                  <span class="method-name">testToVerifyTestCasesPage</span>
+                  <em>
+(Test Case 7: Verify Test Cases Page)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AE_automation_Suite-class-passed -->
+          <div class="suite-AE_automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ae.tests.SearchTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyProductsRelatedToSearchAreVisible">
+                  </a> <!-- verifyProductsRelatedToSearchAreVisible -->
+                  <span class="method-name">verifyProductsRelatedToSearchAreVisible</span>
+                  <em>
+(Test Case 9: Search Product)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AE_automation_Suite-class-passed -->
+          <div class="suite-AE_automation_Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.ae.tests.RegisterTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testToRegisterUserWithExistingEmail">
+                  </a> <!-- testToRegisterUserWithExistingEmail -->
+                  <span class="method-name">testToRegisterUserWithExistingEmail</span>
+                  <em>
+(Test Case 5: Register User with existing email.)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testToRegisterUserWithNewEmail">
+                  </a> <!-- testToRegisterUserWithNewEmail -->
+                  <span class="method-name">testToRegisterUserWithNewEmail</span>
+                  <em>
+(Test Case 1: Register User)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-AE_automation_Suite-class-passed -->
+        </div> <!-- panel AE_automation_Suite -->
+        <div panel-name="test-xml-AE_automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">C:\Software_Testing\Automation_Testing\projects\eclipse-workspace\hybrid-selenium-automation-framework-automationexercise.com\src\test\resources\runner\testng.xml</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite name=&quot;AE automation Suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
+  &lt;listeners&gt;
+    &lt;listener class-name=&quot;com.ae.listeners.ReportListeners&quot;/&gt;
+    &lt;listener class-name=&quot;com.ae.listeners.AnnotationTransformer&quot;/&gt;
+  &lt;/listeners&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;Test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;com.ae.tests.RegisterTest&quot;/&gt;
+      &lt;class name=&quot;com.ae.tests.LoginTest&quot;/&gt;
+      &lt;class name=&quot;com.ae.tests.LogoutTest&quot;/&gt;
+      &lt;class name=&quot;com.ae.tests.ProductsPageTest&quot;/&gt;
+      &lt;class name=&quot;com.ae.tests.SearchTest&quot;/&gt;
+      &lt;class name=&quot;com.ae.tests.CartPageTest&quot;/&gt;
+      &lt;class name=&quot;com.ae.tests.CheckoutTest&quot;/&gt;
+      &lt;class name=&quot;com.ae.tests.SubscriptionTest&quot;/&gt;
+      &lt;class name=&quot;com.ae.tests.TestCasesPageTest&quot;/&gt;
+      &lt;class name=&quot;com.ae.tests.ContactUsTest&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Test --&gt;
+&lt;/suite&gt; &lt;!-- AE automation Suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-AE_automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for AE automation Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Test (10 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-AE_automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for AE automation Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="test-group">
+              <span class="test-group-name">Regression</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testContactUsForm</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToLoginBeforeCheckout</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToLogoutUser</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToRegisterBeforeCheckout</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToRegisterUserWithExistingEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToRegisterUserWithNewEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToRegisterWhileCheckout</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToRemoveProductsFromCart</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToVerifyProductQuantityInCart</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToVerifyTestCasesPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyAllProductsAndProductDetailsPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyLoginWithCorrectEmailAndPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyLoginWithIncorrectEmailAndPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyProductsRelatedToSearchAreVisible</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifySubscriptionInCartPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifySubscriptionInHomePage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+            <div class="test-group">
+              <span class="test-group-name">Sanity</span>
+              <br/>
+              <div class="method-in-group">
+                <span class="method-in-group-name">testContactUsForm</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToLoginBeforeCheckout</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToLogoutUser</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToRegisterBeforeCheckout</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToRegisterUserWithNewEmail</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToRegisterWhileCheckout</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToRemoveProductsFromCart</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">testToVerifyProductQuantityInCart</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyAllProductsAndProductDetailsPage</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyLoginWithCorrectEmailAndPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyLoginWithIncorrectEmailAndPassword</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">verifyProductsRelatedToSearchAreVisible</span>
+                <br/>
+              </div> <!-- method-in-group -->
+            </div> <!-- test-group -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-AE_automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for AE automation Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_AE_automation_Suite');
+function tableData_AE_automation_Suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(16);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testToLoginBeforeCheckout')
+data.setCell(0, 2, 'com.ae.tests.CheckoutTest')
+data.setCell(0, 3, 45302);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testToRegisterWhileCheckout')
+data.setCell(1, 2, 'com.ae.tests.CheckoutTest')
+data.setCell(1, 3, 24562);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testToRegisterBeforeCheckout')
+data.setCell(2, 2, 'com.ae.tests.CheckoutTest')
+data.setCell(2, 3, 22558);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testToRemoveProductsFromCart')
+data.setCell(3, 2, 'com.ae.tests.CartPageTest')
+data.setCell(3, 3, 20923);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testToRegisterUserWithNewEmail')
+data.setCell(4, 2, 'com.ae.tests.RegisterTest')
+data.setCell(4, 3, 14961);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'verifyProductsRelatedToSearchAreVisible')
+data.setCell(5, 2, 'com.ae.tests.SearchTest')
+data.setCell(5, 3, 8233);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testToLogoutUser')
+data.setCell(6, 2, 'com.ae.tests.LogoutTest')
+data.setCell(6, 3, 6766);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'verifyLoginWithCorrectEmailAndPassword')
+data.setCell(7, 2, 'com.ae.tests.LoginTest')
+data.setCell(7, 3, 6736);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testContactUsForm')
+data.setCell(8, 2, 'com.ae.tests.ContactUsTest')
+data.setCell(8, 3, 6324);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testToVerifyProductQuantityInCart')
+data.setCell(9, 2, 'com.ae.tests.CartPageTest')
+data.setCell(9, 3, 5833);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'verifyAllProductsAndProductDetailsPage')
+data.setCell(10, 2, 'com.ae.tests.ProductsPageTest')
+data.setCell(10, 3, 4456);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'verifyLoginWithIncorrectEmailAndPassword')
+data.setCell(11, 2, 'com.ae.tests.LoginTest')
+data.setCell(11, 3, 3863);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testToRegisterUserWithExistingEmail')
+data.setCell(12, 2, 'com.ae.tests.RegisterTest')
+data.setCell(12, 3, 3140);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testToVerifyTestCasesPage')
+data.setCell(13, 2, 'com.ae.tests.TestCasesPageTest')
+data.setCell(13, 3, 1666);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'verifySubscriptionInCartPage')
+data.setCell(14, 2, 'com.ae.tests.SubscriptionTest')
+data.setCell(14, 3, 1607);
+data.setCell(15, 0, 15)
+data.setCell(15, 1, 'verifySubscriptionInHomePage')
+data.setCell(15, 2, 'com.ae.tests.SubscriptionTest')
+data.setCell(15, 3, 724);
+window.suiteTableData['AE_automation_Suite']= { tableData: data, tableDiv: 'times-div-AE_automation_Suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 2 minutes</span>
+              <div id="times-div-AE_automation_Suite">
+              </div> <!-- times-div-AE_automation_Suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-AE_automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for AE automation Suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-AE_automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-AE_automation_Suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ae.tests.RegisterTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testToRegisterUserWithNewEmail</span>
+                <span class="method-start">5029 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">20014 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">20263 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testToRegisterUserWithExistingEmail</span>
+                <span class="method-start">24897 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">28041 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ae.tests.LoginTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">28247 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginWithCorrectEmailAndPassword</span>
+                <span class="method-start">32394 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">39130 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">39533 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyLoginWithIncorrectEmailAndPassword</span>
+                <span class="method-start">43878 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">47745 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ae.tests.LogoutTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">47955 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testToLogoutUser</span>
+                <span class="method-start">52531 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">59299 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ae.tests.ProductsPageTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">59661 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyAllProductsAndProductDetailsPage</span>
+                <span class="method-start">64649 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">69105 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ae.tests.SearchTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">69304 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifyProductsRelatedToSearchAreVisible</span>
+                <span class="method-start">73532 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">81765 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ae.tests.CartPageTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">81991 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testToVerifyProductQuantityInCart</span>
+                <span class="method-start">86234 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">92070 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">92293 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testToRemoveProductsFromCart</span>
+                <span class="method-start">95931 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">116869 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ae.tests.CheckoutTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">117118 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testToRegisterWhileCheckout</span>
+                <span class="method-start">121408 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">145972 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">146375 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testToRegisterBeforeCheckout</span>
+                <span class="method-start">152106 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">174664 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">174922 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testToLoginBeforeCheckout</span>
+                <span class="method-start">184232 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">229534 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ae.tests.SubscriptionTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">229773 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifySubscriptionInCartPage</span>
+                <span class="method-start">233898 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">235506 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">235694 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">verifySubscriptionInHomePage</span>
+                <span class="method-start">239936 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">240661 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ae.tests.TestCasesPageTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">240859 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testToVerifyTestCasesPage</span>
+                <span class="method-start">246384 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">248053 ms</span>
+              </div> <!-- configuration-method after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.ae.tests.ContactUsTest</div> <!-- chronological-class-name -->
+              <div class="configuration-method before">
+                <span class="method-name">setup</span>
+                <span class="method-start">248420 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">testContactUsForm</span>
+                <span class="method-start">254913 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">261241 ms</span>
+              </div> <!-- configuration-method after -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
+</html>
